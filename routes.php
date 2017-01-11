@@ -1,6 +1,6 @@
 <?php
-echo 'routes.phpを通りました';
-echo '<br>';
+// echo 'routes.phpを通りました';
+// echo '<br>';
 
 
 // 1.GETパラメータを取得

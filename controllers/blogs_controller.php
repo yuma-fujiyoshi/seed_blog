@@ -1,7 +1,7 @@
 <?php
 
-echo 'blogsコントローラーが呼ばれました';
-echo '<br>';
+// echo 'blogsコントローラーが呼ばれました';
+// echo '<br>';
 
 // モデルの呼び出し
 require('models/blog.php');
@@ -17,6 +17,7 @@ switch ($action) {
 	case 'add':
 		$controller->add();
 		break;
+		
 	default:
 		# code...
 		break;
@@ -25,14 +26,17 @@ switch ($action) {
 
 class BlogController{
 	function index(){
-		echo 'コントローラーのindex()が呼び出されました!<br>';
+		// echo 'コントローラーのindex()が呼び出されました!<br>';
 		// モデルを呼び出す
 		$blog=new Blog();
-		$blog->index();
+		$viewOptions=$blog->index();
+		$action='index';
+		// var_dump($viewOptions);
+		require('views/layout/application.php');
 	}
 
 	function add(){
-		echo 'addが呼び出されました<br>';
+		// echo 'addが呼び出されました<br>';
 	}
 }
 
